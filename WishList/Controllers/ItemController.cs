@@ -31,9 +31,9 @@ namespace WishList.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Models.Item Item)
+        public IActionResult Create(Models.Item item)
         {
-            _context.Items.Add(Item);
+            _context.Items.Add(item);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
