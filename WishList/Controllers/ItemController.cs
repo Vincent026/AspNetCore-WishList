@@ -28,6 +28,14 @@ namespace WishList.Controllers
             return View("Create");
         }
 
+        public IActionResult Delete(int id)
+        {
+            _context.Remove(id);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
         [HttpPost]
         public IActionResult Create(Item Item)
         {
