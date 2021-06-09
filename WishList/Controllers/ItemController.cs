@@ -38,7 +38,7 @@ namespace WishList.Controllers
 
 
         [HttpPost]
-        public IActionResult Create(Item Item)
+        public IActionResult Create(Models.Item Item)
         {
             _context.Items.Add(Item);
             _context.SaveChanges();
