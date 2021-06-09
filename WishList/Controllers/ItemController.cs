@@ -20,6 +20,7 @@ namespace WishList.Controllers
         public IActionResult Index()
         {
             var model = _context.Items.ToList();
+
             return View("Index", model);
         }
 
@@ -39,11 +40,11 @@ namespace WishList.Controllers
 
         public IActionResult Delete(int id)
         {
-            _context.Remove(id);
+            var item = _context.Items.FirstOrDefault(e => e.Id == id);
+            _context.Remove(item);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-
 
     }
 }
