@@ -45,6 +45,5 @@ namespace WishList.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-
     }
 }
